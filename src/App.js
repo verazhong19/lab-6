@@ -1,25 +1,67 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.buttonIncrement = this.buttonIncrement.bind(this);
+    this.buttonDecrease = this.buttonDecrease.bind(this);
+    this.state = {
+      count: 0
+    };
+    
+  }
+
+  buttonIncrement() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+
+  buttonDecrease() {
+    this.setState({
+      count: this.state.count - 1
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Counter count={this.state.count} />
+        <ButtonPlus onClick={this.buttonIncrement} />
+        <ButtonMinus onClick={this.buttonDecrease} />
+        
+      </div>
+    );
+  }
+}
+
+class ButtonPlus extends React.Component {
+  render() {
+    return (
+      <button className='btn btn-secondary' onClick={this.props.onClick}>
+        +1
+      </button>
+    );
+  }
+}
+
+class ButtonMinus extends React.Component {
+  render() {
+    return (
+      <button className='btn btn-secondary' onClick={this.props.onClick}>
+        -1
+      </button>
+    );
+  }
+}
+
+class Counter extends React.Component {
+  render() {
+    return (
+      <div className="Counter">
+      <h1>{this.props.count}</h1>
       </div>
     );
   }
