@@ -30,10 +30,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <Counter count={this.state.count} />
-        <ButtonPlus onClick={this.buttonIncrement} />
+        <Counter count={this.state.count} />
         <ButtonMinus onClick={this.buttonDecrease} />
-        
+        <ButtonPlus onClick={this.buttonIncrement} />
       </div>
     );
   }
