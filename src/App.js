@@ -42,7 +42,7 @@ class App extends React.Component {
 class ButtonPlus extends React.Component {
   render() {
     return (
-      <button className='btn btn-secondary' onClick={this.props.onClick}>
+      <button className='btn btn-secondary' id="buttonPlus" onClick={this.props.onClick}>
         +1
       </button>
     );
@@ -52,7 +52,7 @@ class ButtonPlus extends React.Component {
 class ButtonMinus extends React.Component {
   render() {
     return (
-      <button className='btn btn-secondary' onClick={this.props.onClick}>
+      <button className='btn btn-secondary' id='buttonMinus' onClick={this.props.onClick}>
         -1
       </button>
     );
